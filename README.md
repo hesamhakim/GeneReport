@@ -1,5 +1,3 @@
-I'll update the README to emphasize that the main way to process files is through Jupyter notebooks.
-
 # OncoKids Report Pipeline
 
 <div align="center">
