@@ -1,3 +1,5 @@
+I'll update the README to emphasize that the main way to process files is through Jupyter notebooks.
+
 # OncoKids Report Pipeline
 
 <div align="center">
@@ -6,11 +8,11 @@
   <img src="https://img.shields.io/badge/version-1.0.0-orange.svg" alt="Version 1.0.0">
 </div>
 
-## 📋 Overview
+##  Overview
 
 This project provides a comprehensive pipeline for processing and analyzing OncoKids pathology reports. The pipeline extracts and standardizes genetic data from PDF reports, including DNA variants, RNA fusions, and CMA (Chromosomal Microarray) findings.
 
-## 🧬 Features
+##  Features
 
 - **PDF Processing**
   - Split large batch PDFs into individual OncoKids reports
@@ -54,17 +56,17 @@ project_root/
 │       └── CoPath_OncoKids_All/
 │
 ├── README.md           # Project documentation
-├── .gitignore          # Gitignore file
 └── requirements.txt    # Project dependencies
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
 - Python 3.11 or higher
 - pip (Python package installer)
 - Java Runtime Environment (required for Camelot)
+- Jupyter Notebook or JupyterLab
 
 ### Installation
 
@@ -87,27 +89,19 @@ project_root/
 
 ### Usage
 
-The pipeline consists of three main steps:
+**The main way to process files is to open and run the Jupyter notebooks sequentially:**
 
-1. **Split large PDF files into individual OncoKids reports**:
-   ```bash
-   python -m notebooks.Split_OncoKids_by_keyword_page_detect
-   ```
-
-2. **Extract tables from split PDFs**:
-   ```bash
-   python -m notebooks.Extract_all_tables_camelot
-   ```
-
-3. **Integrate and analyze data**:
-   ```bash
-   python -m notebooks.Integrated_DNA_RNA_CMA_Analysis
-   ```
-
-Alternatively, open and run the notebooks in a Jupyter environment:
 ```bash
 jupyter notebook
 ```
+
+Then navigate to the `notebooks` directory and open the notebooks in the following order:
+
+1. **Split_OncoKids_by_keyword_page_detect.ipynb** - Splits large PDF files into individual OncoKids reports
+2. **Extract_all_tables_camelot.ipynb** - Extracts tables from split PDFs
+3. **Integrated_DNA_RNA_CMA_Analysis.ipynb** - Integrates and analyzes DNA, RNA, and CMA data
+
+Each notebook contains detailed comments and instructions for executing the pipeline steps.
 
 ## 📊 Data Processing Flow
 
@@ -122,27 +116,6 @@ The pipeline follows this workflow:
    - RNA Fusions: Identifies fusion partners and classifies them
    - CMA Results: Standardizes copy number variants and genomic positions
 
-## 🧪 Testing
-
-To run tests:
-```bash
-python -m unittest discover tests
-```
-
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgements
-
-- Camelot-py for table extraction from PDFs
-- PyPDF2 for PDF manipulation
-- Pandas for data processing
-
-## 👥 Contributors
-
-- Your Name - Creator & Maintainer
-
-## 📞 Contact
-
-For questions or feedback, please open an issue in the GitHub repository.
